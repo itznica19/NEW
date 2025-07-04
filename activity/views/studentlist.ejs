@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <%- include('partials/header') %>
+</head>
+
+<body>
+    <h1>Fantastic class</h1>
+    <p>List of students: (<%= students.length %>)</p>
+    <% if(error) { %>
+        <div class="error">
+            <p>Error: <%= error %></p>
+        </div>
+
+    <% } %>
+    <ul>
+       <% for(let student of students) {%>
+            <li>
+                <a href="/student/<%= student.ID %>"><%= student.FirstName %> <%= student.LastName %></a>
+                <span> - </span>
+                <span><%= student.Email %></span>
+
+            </li>
+       <% } %>
+    </ul>
+    </div>
+    <div>
+        <a href="/">Go to Index</a><br>
+        <a href="/studentadd">Add a Student</a>
+
+    </div>
+</body>
+
+</html>

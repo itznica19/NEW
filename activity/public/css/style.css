@@ -1,0 +1,7 @@
+ /* 404 Page Styles */
+ #dvd {
+     position: absolute;
+     font-size: 2rem;
+     color: white;
+     user-select: none;
+ }

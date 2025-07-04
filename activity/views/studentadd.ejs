@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/header') %>
+    <title>Add a Student</title>
+</head>
+<body>
+    <main>
+        <h1>Add a Student</h1>
+
+        <% if (error) { %>
+            <div class="error">
+                <p>Error: <%= error %></p>
+            </div>
+        <% } %>
+        <form action="/studentadd" method="POST">
+            <div>
+                <label for="lastName">Last Name:</label><br>
+                <input type="text" id="lastName" name="LastName" required placeholder="e.g. Doe" />
+            </div>
+
+            <div>
+                <label for="firstName">First Name:</label><br>
+                <input type="text" id="firstName" name="FirstName" required placeholder="e.g. John" />
+            </div>
+
+            <div>
+                <label for="group">Group:</label><br>
+                <input type="number" id="group" name="Group" required placeholder="e.g. 1" />
+            </div>
+
+            <div>
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="Email" required placeholder="e.g. john.doe@example.com" />
+            </div>
+
+            <div>
+                <label for="comment">Comment (optional):</label><br>
+                <textarea id="comment" name="comment" rows="4" cols="40" placeholder="Add a note if needed..."></textarea>
+            </div>
+
+            <div>
+                <button type="submit">➕ Add Student</button>
+            </div>
+        </form>
+        <div>
+            <a href="/studentlist">← Back to Student List</a>
+            <a href="/">🏠 Home</a>
+        </div>
+    </main>
+</body>
+</html>

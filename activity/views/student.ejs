@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/header') %>
+    <title>Student Details</title>
+</head>
+<body>
+    <main>
+        <h1>👤 Student Details</h1>
+        <% if(error) { %>
+                <div class="error">
+                    <p>Error: <%= error %></p>
+                </div>
+
+            <% } %>
+        <% if (student) { %>
+         <ul>
+            <li><strong>ID:</strong> <%= student.ID %></li>
+            <li><strong>Last Name:</strong> <%= student.LastName %></li>
+            <li><strong>First Name:</strong> <%= student.FirstName %></li>
+            <li><strong>Group:</strong> <%= student.Group %></li>
+            <li><strong>Email:</strong> <%= student.Email %></li>
+            <li><strong>Comment:</strong> <%= student.comment || "No comment" %></li>
+        </ul>
+        <% } else { %>
+            <p>No student found.</p>
+        <% } %>
+
+        <a href="/studentlist">← Back to student list</a>
+    </main>
+</body>
+</html>
